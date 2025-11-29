@@ -1,0 +1,20 @@
+[theme]
+# Colores principales (paleta elegante)
+primaryColor = "#1e3a8a"              # Azul profundo
+backgroundColor = "#eeeeee"           # Fondo blanco
+secondaryBackgroundColor = "#f1f5f9"  # Gris muy suave (estilo Apple)
+textColor = "#1e293b"                 # Gris oscuro elegante
+font = "sans serif"                   # Limpio y moderno
+
+# Opcional: redondeo amigable para widgets modernos (solo en builds recientes)
+base = "light"
+
+[client]
+showErrorDetails = true
+
+[server]
+headless = true
+runOnSave = true
+
+[logger]
+level = "info"
