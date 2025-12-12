@@ -79,7 +79,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Tab Navigation
-tab1, tab2, tab3 = st.tabs(["🗺️ Interactive Map", "📈 Key Statistics", "🔥 Environmental Timeline"])
+tab1, tab2 = st.tabs(["🗺️ Interactive Map", "📈 Key Statistics"])
 
 # TAB 1: Interactive Map
 with tab1:
@@ -305,117 +305,6 @@ with tab2:
                 <div class="metric-label">{stat['label']}</div>
             </div>
             """, unsafe_allow_html=True)
-
-# TAB 3: Environmental Timeline
-with tab3:
-    st.markdown(f"""
-    <div style="text-align: center; margin: 2rem auto 3rem auto;">
-        <h2 style="color: {COLORS['accent']}; font-size: 2.5rem; margin-bottom: 1rem;">
-            🔥 Wildfire Impact Timeline
-        </h2>
-        <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-            Major wildfires have significantly impacted Greece's environment and communities. 
-            Understanding this history helps us appreciate conservation efforts.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    fires = SITE_DATA['nature']['environmental_issues']['major_fires']
-        
-    # Detailed Fire Information
-    st.markdown("### 📋 Fire Event Details")
-    
-    for fire in fires:
-        col1, col2 = st.columns([2, 1])
-        
-        with col1:
-            st.markdown(f"""
-            <div class="info-box" style="border-left-color: {COLORS['accent']};">
-                <h4 style="color: {COLORS['accent']}; margin-bottom: 0.8rem; font-size: 1.4rem;">
-                    {fire['year']} - {fire['event']}
-                </h4>
-                <p style="font-size: 1rem; line-height: 1.6; margin-bottom: 0.5rem;">
-                    {fire['impact']}
-                </p>
-                <p style="margin: 0.3rem 0;"><strong>Casualties:</strong> {fire['deaths']} deaths</p>
-            """, unsafe_allow_html=True)
-            
-            if fire['area_ha']:
-                st.markdown(f"<p style='margin: 0.3rem 0;'><strong>Area Burned:</strong> {fire['area_ha']:,} hectares</p>", unsafe_allow_html=True)
-            
-            st.markdown("</div>", unsafe_allow_html=True)
-        
-        with col2:
-            st.markdown(f"""
-            <div class="metric-card" style="border-top-color: {COLORS['accent']}; height: 100%;">
-                <div class="metric-value" style="color: {COLORS['accent']};">{fire['year']}</div>
-                <div class="metric-label">{fire['event'].split()[0]}</div>
-            </div>
-            """, unsafe_allow_html=True)
-        
-        st.markdown("<br>", unsafe_allow_html=True)
-    
-    # Solutions Progress
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown(f"""
-    <h3 style="color: {COLORS['olive']}; font-size: 2rem; margin: 2rem 0 1.5rem 0; text-align: center;">
-        🌱 Reforestation Progress
-    </h3>
-    """, unsafe_allow_html=True)
-    
-    reforest = SITE_DATA['nature']['environmental_issues']['solutions']['reforestation']
-    
-    # Progress visualization
-    years_passed = 2025 - 2021
-    total_years = 2030 - 2021
-    progress = (years_passed / total_years) * 100
-    trees_planted_estimate = (reforest['target_trees'] * progress) / 100
-    
-    fig = go.Figure(go.Indicator(
-        mode="gauge+number+delta",
-        value=progress,
-        domain={'x': [0, 1], 'y': [0, 1]},
-        title={'text': f"National Reforestation Plan Progress<br><sub>{reforest['period']}</sub>", 'font': {'size': 20}},
-        delta={'reference': 50, 'suffix': "%"},
-        gauge={
-            'axis': {'range': [None, 100], 'ticksuffix': "%"},
-            'bar': {'color': COLORS['olive']},
-            'steps': [
-                {'range': [0, 50], 'color': COLORS['light_gray']},
-                {'range': [50, 100], 'color': "#E8F5E9"}
-            ],
-            'threshold': {
-                'line': {'color': COLORS['accent'], 'width': 4},
-                'thickness': 0.75,
-                'value': 100
-            }
-        }
-    ))
-    
-    fig.update_layout(
-        height=400,
-        font=dict(family="Inter, sans-serif")
-    )
-    
-    st.plotly_chart(fig, use_container_width=True)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown(f"""
-        <div class="metric-card" style="border-top-color: {COLORS['olive']};">
-            <div class="metric-value" style="color: {COLORS['olive']};">{int(trees_planted_estimate/1000000)}M+</div>
-            <div class="metric-label">Trees Planted (Est.)</div>
-        </div>
-        """, unsafe_allow_html=True)
-    
-    with col2:
-        st.markdown(f"""
-        <div class="metric-card" style="border-top-color: {COLORS['olive']};">
-            <div class="metric-value" style="color: {COLORS['olive']};">30M</div>
-            <div class="metric-label">Target by 2030</div>
-        </div>
-        """, unsafe_allow_html=True)
 
 # Final CTA
 st.markdown("<br><br>", unsafe_allow_html=True)

@@ -66,6 +66,7 @@ SITE_DATA = {
         }
     ],
     
+    
     "nature": {
         "parks": [
             {
@@ -116,7 +117,11 @@ SITE_DATA = {
                     "70+ breathtaking beaches",
                     "Ancient catacombs"
                 ],
-                "local_flavors": ["Pitaraka (cheese pies)", "Ladenia (Greek pizza)", "Pure volcanic island honey"],
+                "local_flavors": [
+                    "Pitaraka (cheese pies)",
+                    "Ladenia (Greek pizza)",
+                    "Pure volcanic island honey"
+                ],
                 "coordinates": [36.7213, 24.4266],
                 "image_placeholder": "milos_sarakiniko.jpg"
             },
@@ -133,51 +138,101 @@ SITE_DATA = {
                 "image_placeholder": "corinth_canal.jpg"
             }
         ],
-        
-        "environmental_issues": {
-            "water_crisis": {
-                "agriculture_usage_percent": 80,
-                "groundwater_share_percent": 70,
-                "water_loss_percent": 50,
-                "desertified_percent": 34,
-                "description": "Greece faces serious water challenges, especially in the south and islands. About 80% of freshwater supports agriculture (olives, cotton), while 50% is lost before reaching homes."
+
+        "natural_beauty": {
+            "intro": {
+                "title": "Greece's Natural Paradise",
+                "subtitle": "A biodiversity hotspot where ancient landscapes meet Mediterranean splendor",
+                "description": "Greece is home to over 6,000 plant species—many found nowhere else on Earth. From alpine meadows to coastal wetlands, discover a land where nature thrives in harmony with millennia of human history."
             },
-            "major_fires": [
-                {
-                    "year": 2018,
-                    "event": "Attica Fire",
-                    "deaths": 100,
-                    "area_ha": None,
-                    "impact": "Devastating loss of life and biodiversity"
-                },
-                {
-                    "year": 2023,
-                    "event": "Dadia Forest Fire",
-                    "area_ha": 73000,
-                    "deaths": 18,
-                    "impact": "Massive ecological damage, wildlife loss"
-                }
-            ],
-            "solutions": {
-                "reforestation": {
-                    "period": "2021-2030",
-                    "target_trees": 30000000,
-                    "approach": "National Reforestation Plan with native drought-resistant trees"
-                },
-                "technology": [
-                    "Drone technology for monitoring",
-                    "Satellite detection systems",
-                    "Early warning systems"
-                ],
-                "co2_reduction": {
-                    "2023_drop_percent": 5.93,
-                    "coal_phaseout": 2028,
-                    "description": "Greece plans to phase out all coal-fired power by 2028, investing billions in green transition"
-                }
-            }
+            "flora": {
+                "title": "🌸 Flora & Vegetation",
+                "highlights": [
+                    {
+                        "name": "Endemic Species",
+                        "image": "endemic_orchids.jpg",
+                        "description": "Over 1,700 endemic plant species thrive in Greece's diverse microclimates—from mountain orchids to coastal wildflowers.",
+                        "locations": ["Mount Olympus", "Crete", "Peloponnese"]
+                    },
+                    {
+                        "name": "Ancient Olive Groves",
+                        "image": "ancient_olive_tree.jpg",
+                        "description": "Some olive trees are over 2,000 years old, standing as living witnesses to Greek history and producing world-famous olive oil.",
+                        "locations": ["Kalamata", "Crete", "Peloponnese"]
+                    },
+                    {
+                        "name": "Mediterranean Forests",
+                        "image": "mediterranean_pine_forest.jpg",
+                        "description": "Pine, cypress, and oak forests blanket mountains and coastlines, providing habitat for countless species and natural cooling.",
+                        "locations": ["Mount Parnitha", "Samaria Gorge", "Rhodes"]
+                    },
+                    {
+                        "name": "Spring Wildflowers",
+                        "image": "greek_wildflowers.jpg",
+                        "description": "Each spring, hillsides burst into color with poppies, anemones, and cyclamen—a photographer's dream landscape.",
+                        "locations": ["Naxos", "Zagori", "Peloponnese"]
+                    }
+                ]
+            },
+            "fauna": {
+                "title": "🦅 Wildlife & Fauna",
+                "highlights": [
+                    {
+                        "name": "Loggerhead Sea Turtles",
+                        "image": "loggerhead_turtle.jpg",
+                        "description": "Greece hosts major nesting sites for the endangered Caretta caretta. Watch these ancient mariners return to the beaches where they were born.",
+                        "locations": ["Zakynthos", "Kefalonia", "Peloponnese"]
+                    },
+                    {
+                        "name": "Mediterranean Monk Seal",
+                        "image": "monk_seal.jpg",
+                        "description": "One of the world's rarest mammals finds refuge in Greece's remote caves and islands—fewer than 700 remain globally.",
+                        "locations": ["Alonissos Marine Park", "Cyclades"]
+                    },
+                    {
+                        "name": "Birds of Prey",
+                        "image": "golden_eagle.jpg",
+                        "description": "Golden eagles, griffon vultures, and peregrine falcons soar above gorges and mountains—a paradise for birdwatchers.",
+                        "locations": ["Dadia Forest", "Vikos Gorge", "Crete"]
+                    },
+                    {
+                        "name": "Wild Goats & Mammals",
+                        "image": "kri_kri_goat.jpg",
+                        "description": "The rare Cretan wild goat (Kri-kri) roams mountain peaks alongside brown bears, wolves, and wild boar in northern forests.",
+                        "locations": ["Samaria Gorge (Crete)", "Pindus Mountains", "Rodopi Range"]
+                    }
+                ]
+            },
+            "landscapes": {
+                "title": "🏞️ Iconic Landscapes",
+                "features": [
+                    {
+                        "name": "Gorges & Canyons",
+                        "description": "Samaria Gorge and Vikos Gorge—Europe's deepest—offer dramatic hiking through towering limestone walls.",
+                        "icon": "⛰️"
+                    },
+                    {
+                        "name": "Volcanic Islands",
+                        "description": "Santorini's caldera and Milos' moon-white cliffs showcase volcanic power and otherworldly beauty.",
+                        "icon": "🌋"
+                    },
+                    {
+                        "name": "Crystal Waters",
+                        "description": "Over 13,000 km of coastline with turquoise bays, hidden coves, and pristine beaches—some of Europe's cleanest waters.",
+                        "icon": "💎"
+                    },
+                    {
+                        "name": "Mountain Peaks",
+                        "description": "From snow-capped Olympus to the alpine beauty of Pindus, Greece's mountains offer year-round adventure.",
+                        "icon": "🏔️"
+                    }
+                ]
+            },
+            "conservation_message": "Greece is committed to protecting its natural heritage through 10 national parks, marine reserves, and the National Reforestation Plan. Your visit supports sustainable tourism and conservation efforts."
         }
-    },
-    
+            },
+
+
     "gastronomy": [
         {
             "name": "Souvlaki",
@@ -274,7 +329,412 @@ SITE_DATA = {
             "region": "Peloponnese",
             "type": "landmark"
         }
+    ],
+
+    "travel_plans": [
+        {
+            "id": 1,
+            "title": "History, Archaeology & Coast",
+            "subtitle": "Peloponnese Cultural Journey",
+            "duration": "7-10 days",
+            "difficulty": "Easy",
+            "overview": "A route designed for travelers who want to explore Greece's cultural foundations while enjoying coastal scenery and charming historical towns.",
+            "destinations": [
+                {
+                    "name": "Athens",
+                    "activities": ["Visit the Acropolis & Parthenon", "Archaeological museums", "Stay in Plaka or Monastiraki"],
+                    "duration": "2-3 days"
+                },
+                {
+                    "name": "Delphi & Olympia",
+                    "activities": ["Road trip from Athens to Delphi", "Ancient sanctuary exploration", "Birthplace of Olympic Games"],
+                    "duration": "2 days"
+                },
+                {
+                    "name": "Nafplio & Voidokilia Beach",
+                    "activities": ["Explore fortified town of Nafplio", "Relax at semicircle-shaped beach", "Coastal walks"],
+                    "duration": "2-3 days"
+                }
+            ],
+            "best_season": "Spring or Fall",
+            "season_details": "Warm temperatures, clear skies, and minimal rainfall",
+            "icon": "🏛️",
+            "color": "#0066CC",
+            "image_placeholder": "peloponnese_plan.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Mountain Adventure",
+            "subtitle": "Mount Olympus Expedition",
+            "duration": "4-5 days",
+            "difficulty": "Challenging",
+            "overview": "An option for active travelers seeking a physical challenge in Greece's most iconic mountain landscape.",
+            "destinations": [
+                {
+                    "name": "Litochoro",
+                    "activities": ["Base town for expedition", "Gear preparation", "Local tavernas"],
+                    "duration": "1 day"
+                },
+                {
+                    "name": "Mount Olympus Ascent",
+                    "activities": ["Classic route from Prionia", "Overnight at Spilios Agapitos Refuge", "Summit Skala & Skolio peaks"],
+                    "duration": "2-3 days"
+                }
+            ],
+            "best_season": "June to October",
+            "season_details": "High-altitude areas can experience cold, fog, rain, and rapid weather changes",
+            "special_note": "Mytikas Peak involves technical scrambling - recommended only for experienced climbers",
+            "icon": "⛰️",
+            "color": "#6B8E23",
+            "image_placeholder": "olympus_expedition.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Island Relaxation",
+            "subtitle": "Island Hopping Paradise",
+            "duration": "7-10 days",
+            "difficulty": "Easy",
+            "overview": "A peaceful, beach-oriented experience, perfect for ending a trip with relaxation and panoramic island landscapes.",
+            "destinations": [
+                {
+                    "name": "Santorini",
+                    "activities": ["Volcanic scenery & caldera views", "Sunsets in Oia", "Red Beach exploration"],
+                    "duration": "3-4 days"
+                },
+                {
+                    "name": "Naxos or Paros",
+                    "activities": ["Plaka Beach (Naxos)", "Kolymbithres Beach (Paros)", "Quiet, less crowded islands"],
+                    "duration": "3-4 days"
+                }
+            ],
+            "best_season": "Spring or Fall",
+            "season_details": "Warm and dry conditions ideal for swimming and sunbathing",
+            "access": "Flights or ferries from Thessaloniki or Athens",
+            "icon": "🏖️",
+            "color": "#4A90E2",
+            "image_placeholder": "island_hopping.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Northern Greece Discovery",
+            "subtitle": "Meteora, Ioánnina & Vikos Gorge",
+            "duration": "5-7 days",
+            "difficulty": "Moderate",
+            "overview": "Visit Meteora's cliff-top monasteries, the lakeside city of Ioánnina, and the dramatic viewpoints of Vikos Gorge. A trip that combines nature, culture, and light hiking.",
+            "destinations": [
+                {
+                    "name": "Meteora",
+                    "activities": ["Visit 2-4 cliff-top monasteries", "Great Meteoron, Varlaam, Roussanou", "Stunning photography opportunities"],
+                    "duration": "2 days",
+                    "accommodation": "Kastraki/Kalambaka"
+                },
+                {
+                    "name": "Ioánnina",
+                    "activities": ["Walk around Lake Pamvótida", "Boat to Island of the Lake", "Explore Ioánnina Castle", "Try local dishes: Ioannina pie, lake fish"],
+                    "duration": "2 days",
+                    "accommodation": "Lakeside hotels"
+                },
+                {
+                    "name": "Vikos Gorge",
+                    "activities": ["Oxía Viewpoint", "Beloi Viewpoint", "Visit Zagori villages like Monodendri"],
+                    "duration": "2 days",
+                    "accommodation": "Zagori"
+                }
+            ],
+            "best_season": "Spring (April-May) or Fall (October)",
+            "season_details": "Perfect weather for hiking and sightseeing",
+            "icon": "🏔️",
+            "color": "#E63946",
+            "image_placeholder": "northern_greece.jpg"
+        }
+    ],
+
+    "safety_precautions": {
+        "urban": "Beware of pickpocketing in crowded areas of Athens and on public transportation",
+        "mountain": "Avoid technical routes without proper experience; never hike alone; check weather conditions and bring warm layers, rain jacket, and plenty of water",
+        "natural": "Greece is seismically active and experiences forest fires during the dry season. Follow official guidance during emergencies",
+        "road": "Some roads are narrow or in poor condition. Drive defensively and park in well-lit areas"
+    },
+
+    "money_info": {
+    "currency": {
+        "name": "Euro (€)",
+        "symbol": "€",
+        "code": "EUR",
+        "intro": "Greece uses the Euro as its official currency. ATMs are widely available in cities and tourist areas, and credit cards are increasingly accepted. It's always wise to carry some cash for smaller establishments, markets, and remote areas."
+    },
+    "payment_methods": [
+        {
+            "category": "🚕 Taxis",
+            "emoji": "🚕",
+            "card": "Yes (since 1st of April 2024)",
+            "card_note": "",
+            "cash": "Yes"
+        },
+        {
+            "category": "🏪 Convenience stores",
+            "emoji": "🏪",
+            "card": "Yes",
+            "card_note": "",
+            "cash": "Yes"
+        },
+        {
+            "category": "🛒 Open-air markets",
+            "emoji": "🛒",
+            "card": "Yes (since 1st of April 2024)",
+            "card_note": "",
+            "cash": "Yes, often preferred"
+        },
+        {
+            "category": "🚇 Public transport",
+            "emoji": "🚇",
+            "card": "Depends on transport (available in Athens by the end of 2024)",
+            "card_note": "",
+            "cash": "Yes"
+        },
+        {
+            "category": "🚌 Regional/city buses",
+            "emoji": "🚌",
+            "card": "Sometimes (at the moment, in 33 cities and islands)",
+            "card_note": "",
+            "cash": "Yes"
+        },
+        {
+            "category": "🍽️ Tavernas",
+            "emoji": "🍽️",
+            "card": "Depends on the location",
+            "card_note": "",
+            "cash": "Yes"
+        },
+        {
+            "category": "🏖️ Beach chairs",
+            "emoji": "🏖️",
+            "card": "Sometimes",
+            "card_note": "",
+            "cash": "Yes, often preferred"
+        },
+        {
+            "category": "⛴️ Ferry tickets",
+            "emoji": "⛴️",
+            "card": "Yes",
+            "card_note": "",
+            "cash": "Yes"
+        }
+    ],
+    "tips": [
+        "💳 Credit cards are widely accepted in hotels, restaurants, and shops in tourist areas",
+        "💵 Always carry €20-50 in cash for small purchases, tips, and rural areas",
+        "🏧 ATMs charge withdrawal fees; use bank ATMs for better rates",
+        "🪙 Small coins are useful for public restrooms and street vendors",
+        "💡 Contactless payments are becoming more common in major cities"
     ]
+},
+
+    # Añade esta sección a tu SITE_DATA en utils/data.py
+
+    "urban_rural": {
+        "hero": {
+            "title": "🏠 Urban or Rural 🚜?",
+            "subtitle": "",
+            "description": "From the buzzing streets of Athens to the peaceful villages of the Peloponnese, Greece offers two distinct lifestyles. Which one suits you best?"
+        },
+        
+        "key_stats": [
+            {
+                "icon": "🏛️",
+                "value": "80%",
+                "label": "of Greece's population lives in urban areas",
+                "color": "primary"
+            },
+            {
+                "icon": "🚨",
+                "value": "1M+",
+                "label": "passengers transported daily on Athens public transport",
+                "color": "sea"
+            },
+            {
+                "icon": "🍃",
+                "value": "5%",
+                "label": "annual growth in rural tourism (Crete, Peloponnese)",
+                "color": "olive"
+            },
+            {
+                "icon": "🚜",
+                "value": "25%",
+                "label": "of Greece's workforce in agriculture (rural areas)",
+                "color": "accent"
+            }
+        ],
+        
+        "comparison": {
+            "urban": {
+                "title": "Urban Communities",
+                "emoji": "🏙️",
+                "tagline": "Modern, Connected and Dynamic.",
+                "image": "athens_city_life.jpg",
+                "advantages": [
+                    {
+                        "icon": "🏥",
+                        "title": "Better Healthcare",
+                        "description": "Easy access to hospitals and specialists, especially in Athens and Thessaloniki"
+                    },
+                    {
+                        "icon": "💼",
+                        "title": "More Job Opportunities",
+                        "description": "Tourism, shipping, technology, and public services concentrated in cities"
+                    },
+                    {
+                        "icon": "🚇",
+                        "title": "Excellent Transport",
+                        "description": "Metro, buses, and trams make daily travel faster and easier"
+                    },
+                    {
+                        "icon": "🎓",
+                        "title": "Education & Culture",
+                        "description": "Universities, museums, concerts, and vibrant nightlife"
+                    }
+                ],
+                "disadvantages": [
+                    {
+                        "icon": "💰",
+                        "title": "High Living Costs",
+                        "description": "Rent and daily expenses much higher, especially in Athens"
+                    },
+                    {
+                        "icon": "🚗",
+                        "title": "Traffic & Pollution",
+                        "description": "28 µg/m³ PM10 concentration (above EU's 20 µg/m³ limit)"
+                    },
+                    {
+                        "icon": "👥",
+                        "title": "Crowded Environments",
+                        "description": "High population density with tourists year-round"
+                    },
+                    {
+                        "icon": "🌳",
+                        "title": "Less Nature",
+                        "description": "Limited green spaces compared to rural areas"
+                    }
+                ],
+                "characteristics": [
+                ]
+            },
+            "rural": {
+                "title": "Rural Communities",
+                "emoji": "🏕️",
+                "tagline": "Peaceful, Traditional and Authentic.",
+                "image": "greek_village_life.jpg",
+                "advantages": [
+                    {
+                        "icon": "🌾",
+                        "title": "Calmer Lifestyle",
+                        "description": "Less traffic and noise, peaceful daily rhythm"
+                    },
+                    {
+                        "icon": "🏞️",
+                        "title": "Cleaner Air & Nature",
+                        "description": "Beautiful landscapes with beaches, mountains, and olive fields"
+                    },
+                    {
+                        "icon": "🤝",
+                        "title": "Strong Community",
+                        "description": "People know each other and help their neighbors"
+                    },
+                    {
+                        "icon": "💵",
+                        "title": "Lower Living Costs",
+                        "description": "Cheaper housing and daily expenses than urban centers"
+                    }
+                ],
+                "disadvantages": [
+                    {
+                        "icon": "🏥",
+                        "title": "Limited Healthcare",
+                        "description": "Many villages have only one doctor or small health centers"
+                    },
+                    {
+                        "icon": "📉",
+                        "title": "Fewer Jobs",
+                        "description": "Mainly agriculture or seasonal tourism"
+                    },
+                    {
+                        "icon": "🚌",
+                        "title": "Weak Transport",
+                        "description": "Fewer buses and long distances between services"
+                    },
+                    {
+                        "icon": "👨‍🎓",
+                        "title": "Youth Migration",
+                        "description": "Young people move to cities for education and work"
+                    }
+                ],
+                "characteristics": [
+
+                ]
+            }
+        },
+        
+        "similarities": {
+            "title": "What They Have in Common",
+            "description": "Despite their differences, urban and rural communities in Greece are deeply interconnected.",
+            "points": [
+                {
+                    "icon": "🤝",
+                    "text": "Both contribute to Greece's economy and culture"
+                },
+                {
+                    "icon": "🏫",
+                    "text": "Schools and healthcare exist (with different access levels)"
+                },
+                {
+                    "icon": "🇬🇷",
+                    "text": "Strong sense of Greek identity and traditions"
+                },
+                {
+                    "icon": "🔄",
+                    "text": "They depend on each other for resources and services"
+                },
+                {
+                    "icon": "📱",
+                    "text": "Technology present at different levels"
+                }
+            ]
+        },
+        
+        "decision_guide": {
+            "title": "Which Lifestyle Suits You?",
+            "subtitle": "Answer these questions to discover your ideal Greek experience",
+            "scenarios": [
+                {
+                    "question": "What's your ideal pace of life?",
+                    "urban": "Fast-paced, always something happening",
+                    "rural": "Slow and peaceful, time to breathe"
+                },
+                {
+                    "question": "How important is career opportunity?",
+                    "urban": "Essential - I need diverse job options",
+                    "rural": "Flexible - I can work remotely or seasonally"
+                },
+                {
+                    "question": "What about healthcare access?",
+                    "urban": "Must have specialists nearby",
+                    "rural": "Basic care is sufficient for me"
+                },
+                {
+                    "question": "Your ideal weekend activity?",
+                    "urban": "Museums, concerts, restaurants, nightlife",
+                    "rural": "Hiking, beach walks, village festivals"
+                },
+                {
+                    "question": "How do you feel about crowds?",
+                    "urban": "I enjoy the energy of city life",
+                    "rural": "I prefer knowing my neighbors"
+                }
+            ]
+        }
+    }
+
+
 }
 
 # Color palette inspired by Greece

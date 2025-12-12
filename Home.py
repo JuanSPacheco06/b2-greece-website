@@ -277,6 +277,165 @@ st.markdown(f"""
             font-size: 2rem;
         }}
     }}
+
+    /* Travel Plans Section */
+    .plans-section {{
+        background: {COLORS['light_gray']};
+        padding: 4rem 2rem;
+        border-radius: 12px;
+        margin: 4rem 0;
+    }}
+
+    .plan-card {{
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 2rem;
+        border-top: 6px solid;
+    }}
+
+    .plan-card:hover {{
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }}
+
+    .plan-header {{
+        padding: 2rem;
+        color: white;
+        position: relative;
+    }}
+
+    .plan-body {{
+        padding: 2rem;
+    }}
+
+    .plan-badge {{
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin: 0.3rem 0.3rem 0.3rem 0;
+    }}
+
+    .destination-item {{
+        background: {COLORS['light_gray']};
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 0.8rem 0;
+        border-left: 4px solid {COLORS['primary']};
+    }}
+
+    .safety-box {{
+        background: {COLORS['accent']}15;
+        border-left: 4px solid {COLORS['accent']};
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }}
+
+    /* Money & Payment Section */
+    .money-section {{
+        background: white;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        margin: 4rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }}
+
+    .payment-table {{
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 2rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }}
+
+    .payment-table thead {{
+        background: linear-gradient(135deg, {COLORS['primary']} 0%, {COLORS['sea']} 100%);
+        color: white;
+    }}
+
+    .payment-table thead tr {{
+        display: table-row !important;
+    }}
+    .payment-table thead th {{
+        display: table-cell !important;
+    }}
+
+    .payment-table th {{
+        padding: 1.2rem 1rem;
+        text-align: left;
+        font-weight: 600;
+        font-size: 1.1rem;
+        border-bottom: 3px solid {COLORS['secondary']};
+    }}
+
+    .payment-table td {{
+        padding: 1rem;
+        border-bottom: 1px solid {COLORS['light_gray']};
+        font-size: 0.95rem;
+        vertical-align: top;
+    }}
+
+    .payment-table tbody tr {{
+        transition: background 0.2s ease;
+    }}
+
+    .payment-table tbody tr:hover {{
+        background: {COLORS['light_gray']};
+    }}
+
+    .payment-table tbody tr:last-child td {{
+        border-bottom: none;
+    }}
+
+    .category-cell {{
+        font-weight: 600;
+        color: {COLORS['primary']};
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }}
+
+    .note-badge {{
+        display: inline-block;
+        background: {COLORS['secondary']};
+        color: {COLORS['dark']};
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        vertical-align: super;
+        margin-left: 0.2rem;
+    }}
+
+    .tip-card {{
+        background: {COLORS['light_gray']};
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid {COLORS['secondary']};
+        margin: 0.8rem 0;
+        transition: all 0.3s ease;
+    }}
+
+    .tip-card:hover {{
+        transform: translateX(5px);
+        border-left-color: {COLORS['primary']};
+    }}
+
+    .currency-box {{
+        background: linear-gradient(135deg, {COLORS['secondary']}20 0%, {COLORS['primary']}20 100%);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 2px solid {COLORS['secondary']};
+        margin-bottom: 2rem;
+    }}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -340,6 +499,248 @@ def render_why_visit():
             </div>
             """, unsafe_allow_html=True)
 
+# Travel Plans Section
+def render_travel_plans():
+    st.markdown(f"""
+    <div class="plans-section">
+        <div class="section-header">
+            <h2 class="section-title">🗺️ Our Travel Plans</h2>
+            <p class="section-subtitle"><strong>Pre-designed itineraries crafted by local experts</strong></p>
+            <p style="text-align: center; max-width: 800px; margin: 1rem auto; font-size: 1.1rem; color: {COLORS['dark']};">
+                Choose from our curated travel plans or use them as inspiration for your custom journey. 
+                Each plan is designed to showcase the best of Greece while ensuring safety and comfort.
+            </p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Display each plan
+    for plan in SITE_DATA['travel_plans']:
+        # Difficulty badge color
+        difficulty_color = {
+            "Easy": COLORS['olive'],
+            "Moderate": COLORS['secondary'],
+            "Challenging": COLORS['accent']
+        }.get(plan['difficulty'], COLORS['primary'])
+        
+        col1, col2 = st.columns([1, 1.5])
+        
+        with col1:
+            # Plan image
+            img_html = render_image(plan['image_placeholder'], class_name="destination-image", alt=plan['title'])
+            st.markdown(f"""
+            <div class="image-placeholder" style="min-height: 350px;">
+                {img_html}
+            </div>
+            """, unsafe_allow_html=True)
+        
+        with col2:
+            st.markdown(f"""
+            <div class="plan-card" style="border-top-color: {plan['color']};">
+                <div class="plan-header" style="background: linear-gradient(135deg, {plan['color']} 0%, {plan['color']}CC 100%);">
+                    <div style="font-size: 3rem; margin-bottom: 0.5rem;">{plan['icon']}</div>
+                    <h3 style="font-size: 2rem; margin-bottom: 0.3rem; color: white;">{plan['title']}</h3>
+                    <p style="font-size: 1.2rem; opacity: 0.9; margin: 0; color: white;">{plan['subtitle']}</p>
+                </div>
+                <div class="plan-body">
+                    <div style="margin-bottom: 1rem;">
+                        <span class="plan-badge" style="background: {difficulty_color}; color: white;">
+                            {plan['difficulty']}
+                        </span>
+                        <span class="plan-badge" style="background: {COLORS['primary']}; color: white;">
+                            📅 {plan['duration']}
+                        </span>
+                        <span class="plan-badge" style="background: {COLORS['secondary']}; color: {COLORS['dark']};">
+                            🌤️ {plan['best_season']}
+                        </span>
+                    </div>
+                    <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+                        {plan['overview']}
+                    </p>
+            """, unsafe_allow_html=True)
+            
+        # ---------------------------------------------
+        # 🔥 New Itinerary Highlights in TWO COLUMNS
+        # ---------------------------------------------
+        st.markdown(
+            f"<h4 style='color: {plan['color']}; margin-bottom: 1rem;'>📍 Itinerary Highlights</h4>",
+            unsafe_allow_html=True
+        )
+
+        col_left, col_right = st.columns(2)
+
+        for idx, dest in enumerate(plan['destinations']):
+            target_col = col_left if idx % 2 == 0 else col_right
+            with target_col:
+                st.markdown(f"""
+                <div class="destination-item" style="border-left-color: {plan['color']}; margin-bottom: 1.2rem;">
+                    <strong style="color: {plan['color']}; font-size: 1.15rem;">
+                        {idx + 1}. {dest['name']}
+                    </strong>
+                    {f"<span style='float: right; color: {COLORS['dark']}; font-size: 0.9rem;'>⏱️ {dest['duration']}</span>" 
+                        if 'duration' in dest else ""}
+                    <ul style="margin: 0.5rem 0 0 0; padding-left: 1.2rem;">
+                """, unsafe_allow_html=True)
+
+                for activity in dest['activities']:
+                    st.markdown(f"<li style='margin: 0.3rem 0;'>{activity}</li>", unsafe_allow_html=True)
+
+                if 'accommodation' in dest:
+                    st.markdown(
+                        f"<p style='margin-top: 0.5rem; font-size: 0.9rem;'><strong>🏨 Stay:</strong> {dest['accommodation']}</p>",
+                        unsafe_allow_html=True
+                    )
+
+                st.markdown("</ul></div>", unsafe_allow_html=True)
+        # ---------------------------------------------
+        # END Two-column itinerary section
+        # ---------------------------------------------
+        
+        # Special notes
+        if 'special_note' in plan:
+            st.markdown(f"""
+            <div class="safety-box">
+                <strong>⚠️ Important:</strong> {plan['special_note']}
+            </div>
+            """, unsafe_allow_html=True)
+        
+        if 'access' in plan:
+            st.markdown(f"""
+            <p style="margin-top: 1rem; padding: 0.8rem; background: {COLORS['light_gray']}; border-radius: 8px;">
+                <strong>✈️ Access:</strong> {plan['access']}
+            </p>
+            """, unsafe_allow_html=True)
+        
+        st.markdown("""
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)       
+    
+    # Safety precautions section
+    st.markdown(f"""
+    <div style="background: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 2px solid {COLORS['accent']};">
+        <h3 style="color: {COLORS['accent']}; text-align: center; margin-bottom: 1.5rem;">
+            🛡️ General Safety Precautions
+        </h3>
+    """, unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    
+    safety_items = [
+        {"icon": "🏙️", "title": "Urban Safety", "text": SITE_DATA['safety_precautions']['urban']},
+        {"icon": "⛰️", "title": "Mountain Safety", "text": SITE_DATA['safety_precautions']['mountain']},
+        {"icon": "🌋", "title": "Natural Risks", "text": SITE_DATA['safety_precautions']['natural']},
+        {"icon": "🚗", "title": "Road Safety", "text": SITE_DATA['safety_precautions']['road']}
+    ]
+    
+    for idx, item in enumerate(safety_items):
+        with col1 if idx % 2 == 0 else col2:
+            st.markdown(f"""
+            <div class="safety-box">
+                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">{item['icon']}</div>
+                <strong style="color: {COLORS['accent']};">{item['title']}:</strong>
+                <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; line-height: 1.6;">{item['text']}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    
+    st.markdown("</div></div>", unsafe_allow_html=True)
+
+# Money & Payment Information Section
+def render_money_info():
+    st.markdown(f"""
+    <div class="money-section">
+        <div class="section-header">
+            <h2 class="section-title">💰 Before You Choose...</h2>
+            <p class="section-subtitle"><strong>Here's what you need to know so you're never caught off guard!</strong></p>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Currency info box
+    currency = SITE_DATA['money_info']['currency']
+    st.markdown(f"""
+    <div class="currency-box">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <div style="font-size: 4rem;">💶</div>
+            <div>
+                <h3 style="color: {COLORS['primary']}; margin: 0; font-size: 2rem;">{currency['name']}</h3>
+                <p style="margin: 0.3rem 0 0 0; font-size: 1.1rem; color: {COLORS['dark']};">
+                    Code: <strong>{currency['code']}</strong> | Symbol: <strong>{currency['symbol']}</strong>
+                </p>
+            </div>
+        </div>
+        <p style="font-size: 1.05rem; line-height: 1.7; color: {COLORS['dark']}; margin: 0;">
+            {currency['intro']}
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Payment methods table
+    st.markdown(f"""
+    <h3 style="color: {COLORS['primary']}; text-align: center; margin: 2rem 0 1.5rem 0; font-size: 2rem;">
+        💳 Payment Methods Accepted
+    </h3>
+    """, unsafe_allow_html=True)
+    
+    # Build the table
+    table_html = f"""
+    <table class="payment-table">
+        <thead>
+            <tr>
+                <th style="width: 30%;">Payment for...</th>
+                <th style="width: 40%;">Card 💳</th>
+                <th style="width: 30%;">Cash 💵</th>
+            </tr>
+        </thead>
+        <tbody>
+    """
+    
+    for item in SITE_DATA['money_info']['payment_methods']:
+        note_badge = f'<span class="note-badge">{item["card_note"]}</span>' if item['card_note'] else ''
+        
+        table_html += f"""
+        <tr>
+            <td>
+                <div class="category-cell">
+                    <span style="font-size: 1.5rem;">{item['emoji']}</span>
+                    <span>{item['category'].replace(item['emoji'] + ' ', '')}</span>
+                </div>
+            </td>
+            <td>{item['card']}{note_badge}</td>
+            <td>{item['cash']}</td>
+        </tr>
+        """
+    
+    table_html += """
+        </tbody>
+    </table>
+    """
+    
+    st.html(table_html)
+        
+    # Quick tips section
+    st.markdown(f"""
+    <h3 style="color: {COLORS['primary']}; text-align: center; margin: 3rem 0 1.5rem 0; font-size: 1.8rem;">
+        💡 Smart Money Tips for Travelers
+    </h3>
+    """, unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    
+    tips = SITE_DATA['money_info']['tips']
+    
+    for idx, tip in enumerate(tips):
+        with col1 if idx % 2 == 0 else col2:
+            st.markdown(f"""
+            <div class="tip-card">
+                <p style="margin: 0; font-size: 1rem; line-height: 1.6;">{tip}</p>
+            </div>
+            """, unsafe_allow_html=True)
+    
+    st.markdown("</div>", unsafe_allow_html=True)
+
 # Quick Stats
 def render_stats():
     st.markdown(f"""
@@ -379,7 +780,7 @@ def render_featured_destinations():
     st.markdown("""
     <div class="section-header" id="nature">
         <h2 class="section-title">Featured Destinations</h2>
-        <p class="section-subtitle">From ancient cities to hidden paradises</p>
+        <p class="section-subtitle"><strong>From ancient cities to hidden paradises.</strong></p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -442,7 +843,7 @@ def render_footer():
             {UI_TEXT['contact_cta']}
         </button>
         <p style="color: rgba(255,255,255,0.5); margin-top: 2rem; font-size: 0.9rem;">
-            Greek Escape © 2025 | Four Cities, One Dream
+            Greek Escape © 2025
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -454,8 +855,7 @@ def main():
         st.markdown(f"""
         <div style="text-align: center; padding: 1rem 0;">
             <h1 style="color: {COLORS['primary']}; font-size: 1.8rem; margin-bottom: 0.5rem;">🇬🇷 Greek Escape</h1>
-            <p style="color: {COLORS['dark']}; font-size: 0.9rem; font-style: italic;">Four Cities, One Dream</p>
-        </div>
+            </div>
         """, unsafe_allow_html=True)
         
         st.markdown("---")
@@ -463,11 +863,11 @@ def main():
         st.markdown("""
         ### 🧭 Navigation
         Use the pages in the sidebar to explore:
-        - 🏛️ **Culture & Art**
+        - 🏛️ **Arts, Literature & Culture**
         - 🌿 **Nature & Environment**
         - 🍽️ **Gastronomy**
-        - 📚 **Writers & Literature**
-        - 📷 **Gallery**
+        - ⛰️ **Places to visit**
+        - 🏙️**vs**🏕️ 
         - 📊 **Data & Maps**
         """)
         
@@ -478,6 +878,8 @@ def main():
     # Main content
     render_hero()
     render_why_visit()
+    render_travel_plans()
+    render_money_info() 
     render_stats()
     render_featured_destinations()
     render_footer()
